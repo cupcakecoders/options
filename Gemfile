@@ -5,6 +5,11 @@ ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'sassc-rails', '>= 2.1.0'
+gem 'jquery-rails'
+gem 'popper_js', '~> 1.14.5'
 # Use Postgres
 gem 'pg'
 # Use Puma as the app server
