@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_30_102904) do
+ActiveRecord::Schema.define(version: 2019_05_30_133152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 2019_05_30_102904) do
   create_table "companies", force: :cascade do |t|
     t.string "company_name"
     t.string "address1"
-    t.string "string"
     t.string "address2"
     t.string "town"
     t.string "postcode"
@@ -70,7 +69,6 @@ ActiveRecord::Schema.define(version: 2019_05_30_102904) do
 
   create_table "options", force: :cascade do |t|
     t.integer "number_of_options"
-    t.integer "cumulative_options"
     t.datetime "options_issued"
     t.datetime "vesting_start"
     t.datetime "vesting_end"
