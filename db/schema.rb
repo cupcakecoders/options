@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_27_083942) do
+ActiveRecord::Schema.define(version: 2019_05_30_102904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,33 @@ ActiveRecord::Schema.define(version: 2019_05_27_083942) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "companies", force: :cascade do |t|
+    t.string "company_name"
+    t.string "address1"
+    t.string "string"
+    t.string "address2"
+    t.string "town"
+    t.string "postcode"
+    t.string "country"
+    t.integer "telephone_number"
+    t.bigint "user_id"
+    t.bigint "admin_user_id"
+    t.bigint "option_value_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_user_id"], name: "index_companies_on_admin_user_id"
+    t.index ["option_value_id"], name: "index_companies_on_option_value_id"
+    t.index ["user_id"], name: "index_companies_on_user_id"
+  end
+
+  create_table "option_values", force: :cascade do |t|
+    t.integer "options_price"
+    t.datetime "date"
+    t.integer "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "options", force: :cascade do |t|
     t.integer "number_of_options"
     t.integer "cumulative_options"
@@ -67,4 +94,7 @@ ActiveRecord::Schema.define(version: 2019_05_27_083942) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "companies", "admin_users"
+  add_foreign_key "companies", "option_values"
+  add_foreign_key "companies", "users"
 end
