@@ -10,7 +10,6 @@ one:
   country: MyString
   telephone_number: 1
   user: one
-  admin_user: one
   optionvalue: one
 
 two:
@@ -23,5 +22,4 @@ two:
   country: MyString
   telephone_number: 1
   user: two
-  admin_user: two
   optionvalue: two
