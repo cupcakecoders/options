@@ -1,0 +1,52 @@
+1)
+Create
+"admin/manage-users"
+"admin/manage-users/new"
+"admin/manage-company"
+"admin/manage-company/new"
+pages with no content
+
+1)
+Given I am logged in as an admin user
+When I see the navbar
+Then I see "Manage Users", "Manage Company", "Logout"
+
+Given I am logged in as an non-admin user
+When I see the navbar
+Then I see "Dashboard", "Logout"
+
+*You will have to use your current_admin_user helper in conditionals for the navbar*
+
+2)
+Given I am logged in as an non-admin user
+When I go to the urls for "Manage Users" and "Manage Company"
+Then I am redirected back to the dashboard
+And I see a notice "Restricted Area, Admin users only"
+
+Given I am logged in as an admin user
+When I go to the url for "Dashboard"
+Then I am redirected back to the "Manage Company" page
+And I see a notice "Dashboard is for users only"
+
+*You will have to use your current_admin_user helper in before filters*
+
+3)
+Given I am an admin
+When I first sign up
+Then I am on the "admin/manage-company/new" page
+And I see a form with the necessary fields to create a new company
+
+
+4)
+Given I am an admin
+When I visit the "admin/manage-users" page
+Then I see a list of all my companies users
+
+Given I am an admin
+When I visit the "admin/manage-users" page
+And I click on "Create a new User"
+Then I am redirected to an "admin/manage-users/new" page
+
+Given I am an admin
+When I visit the "admin/manage-users/new" page
+Then I see a form with the necessary fields to create a new user for my company
