@@ -7,7 +7,4 @@ class StaticPagesController < ApplicationController
   def faqs
   end
 
-  def dashboard
-  end
-
 end
