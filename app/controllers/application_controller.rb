@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_admin_user
+  helper_method :current_admin_user, :current_employee_user
 
   #def current_admin_user
     #@adminuser = current_user.is_admin?
@@ -7,11 +7,18 @@ class ApplicationController < ActionController::Base
 
   def current_admin_user
     if current_user && current_user.is_admin?
-        return current_user
-     else
-       return nil
-     end
+      current_user
+    else
+      nil
+    end
   end
 
+  def current_employee_user
+    if current_user && current_user.is_employee?
+      current_user
+    else
+      nil
+    end
+  end
 
 end

@@ -14,4 +14,13 @@ class User < ApplicationRecord
       false
     end
   end
+
+  def is_employee?
+    if role != "admin"
+      true
+    else
+      false
+    end
+  end
+
 end
