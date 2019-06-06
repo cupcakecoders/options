@@ -15,7 +15,7 @@ class User < ApplicationRecord
   #end
 
   def is_admin?
-    if user_signed_in? && role == "admin"
+    if :role == "admin"
       true
     else
       false
