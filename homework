@@ -4,10 +4,40 @@ Create
 "admin/manage-users/new"
 "admin/manage-company"
 "admin/manage-company/new"
-pages with no content
+
+pages with no content - done
+
+rails generate controllers - do we need admin / users controller?
+complete routes and controller actions for all newly created pages.
 
 1)
+
+<nav>
+  <ul class="nav navbar-nav navbar-right">
+    <% if user_signed_in? %>
+      <li><%= link_to "Dashboard", dashboard_path %></li>
+      <li><%= link_to current_user.email, edit_user_registration_path %></li>
+      <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    <% elsif %> current_admin_user.is_admin?%>
+      <span style="color:white">SPECIAL ADMIN LINK</span>
+      <li><%= link_to "FAQS", faqs_path %></li>
+      <li><%= link_to "Log in", new_user_session_path %></li>
+      <li><%= link_to "Sign up", new_user_registration_path %></li>
+    <% else %>
+      <li><%= link_to "FAQS", faqs_path %></li>
+      <li><%= link_to "Log in", new_user_session_path %></li>
+      <li><%= link_to "Sign up", new_user_registration_path %></li>
+    <% end %>
+  </ul>
+</nav>
+
 Given I am logged in as an admin user
+If User = current_admin_user.is_admin?
+navbar
+
+
+
+
 When I see the navbar
 Then I see "Manage Users", "Manage Company", "Logout"
 
@@ -50,3 +80,6 @@ Then I am redirected to an "admin/manage-users/new" page
 Given I am an admin
 When I visit the "admin/manage-users/new" page
 Then I see a form with the necessary fields to create a new user for my company
+
+5)
+change current_admin_user so it pulls in details of the current user e.g. name etc not just is it admin true/false
