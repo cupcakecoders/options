@@ -15,7 +15,7 @@ class User < ApplicationRecord
   #end
 
   def is_admin?
-    if role == "admin"
+    if user_signed_in? && role == "admin"
       true
     else
       false

@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  before_action :authenticate_user!, only: [:dashboard, :home, :faqs]
+  before_action :authenticate_user!, only: [:dashboard]
 
   def home
   end
