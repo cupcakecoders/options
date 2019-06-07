@@ -9,4 +9,8 @@ class Admin::CompaniesController < Admin::BaseController
     # @company = Company.find(current_admin_user.company_id)
     # Show my own company
   end
+
+  def edit
+  end
+
 end

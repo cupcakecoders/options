@@ -18,11 +18,11 @@ complete routes and controller actions for all newly created pages.
       <li><%= link_to "Dashboard", dashboard_path %></li>
       <li><%= link_to current_user.email, edit_user_registration_path %></li>
       <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-    <% elsif %> current_admin_user.is_admin?%>
+    <% elsif %> current_user.is_admin?%>
       <span style="color:white">SPECIAL ADMIN LINK</span>
       <li><%= link_to "FAQS", faqs_path %></li>
-      <li><%= link_to "Log in", new_user_session_path %></li>
-      <li><%= link_to "Sign up", new_user_registration_path %></li>
+      <li><%= link_to "Dashboard", # %></li>
+      <li><%= link_to "Company", # %></li>
     <% else %>
       <li><%= link_to "FAQS", faqs_path %></li>
       <li><%= link_to "Log in", new_user_session_path %></li>
@@ -32,12 +32,6 @@ complete routes and controller actions for all newly created pages.
 </nav>
 
 Given I am logged in as an admin user
-If User = current_admin_user.is_admin?
-navbar
-
-
-
-
 When I see the navbar
 Then I see "Manage Users", "Manage Company", "Logout"
 
