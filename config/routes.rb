@@ -11,5 +11,4 @@ Rails.application.routes.draw do
     #get '/companies/:id' => 'companies#show'
     # get '/manage-companies' => 'companies#manage'
   end
-
 end
