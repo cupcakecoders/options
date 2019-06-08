@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   #ßroot 'application#hello'
   namespace :admin do
     root 'base#dashboard'
-    resources :companies, :users
+    resources :companies
+    resources :users
     #get '/companies/:id' => 'companies#show'
     # get '/manage-companies' => 'companies#manage'
   end
