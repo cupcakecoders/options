@@ -1,10 +1,12 @@
 class Admin::UsersController < Admin::BaseController
 
   def index
-    @user = User.all
+    @user = User.where(company_id: current_admin_user.company_id)
   end
 
   def show
+    # if user and (user.company_id == record.company_id)
+    # @user = User.where(id: params[:id], company_id: current_admin_user.company_id).first
     @user = User.find(params[:id])
   end
 
@@ -21,6 +23,8 @@ class Admin::UsersController < Admin::BaseController
       render 'new'
     end
   end
+
+
 
   private
 

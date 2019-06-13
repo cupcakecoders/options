@@ -1,16 +1,15 @@
 <h1> admin/users index </h1>
 List all employees
 <ul>
-<li>limit this to employees at same company as admin user - controller</li>
 <li>exclude current user from list - controller</li>
 <li>add links to view, edit, delete</li>
+<li>add job title to users table</li>
 <li>paginate</li>
 </ul>
 
 <br>
 <div>
-<% @users = User.all %>
-<% @users.each do |user| %>
+<% @user.each do |user| %>
   <%= user.firstname %><%= user.lastname %><br/>
   <%= user.email %><br/>
 <% end %>

@@ -10,6 +10,7 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'jquery-rails'
 gem 'popper_js', '~> 1.14.5'
+gem "pundit"
 
 # Use Postgres
 gem 'pg'

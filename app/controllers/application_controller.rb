@@ -1,9 +1,8 @@
 class ApplicationController < ActionController::Base
   helper_method :current_admin_user, :current_employee_user
-
-  #def current_admin_user
-    #@adminuser = current_user.is_admin?
-  #end
+  
+  include Pundit
+	protect_from_forgery with: :exception
 
   def current_admin_user
     if current_user && current_user.is_admin?
@@ -20,5 +19,11 @@ class ApplicationController < ActionController::Base
       nil
     end
   end
+
+  #def pundit_user    
+    #AuthorizationContext.new(current_user, current_organization)  
+    #end
+  #end
+
 
 end
