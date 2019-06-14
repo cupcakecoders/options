@@ -3,7 +3,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   before_save { self.email = email.downcase }
   has_many :option
+  accepts_nested_attributes_for :option
   belongs_to :company, optional: true
+
 
   # is_admin could kind of work as a column in the db, so it's ok to make as a method here.
 

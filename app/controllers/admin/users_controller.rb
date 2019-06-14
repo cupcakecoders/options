@@ -1,13 +1,28 @@
 class Admin::UsersController < Admin::BaseController
 
   def index
-    @user = User.where(company_id: current_admin_user.company_id)
+    @users = User.where(company_id: current_admin_user.company_id)
   end
 
   def show
-    # if user and (user.company_id == record.company_id)
-    # @user = User.where(id: params[:id], company_id: current_admin_user.company_id).first
     @user = User.find(params[:id])
+    unless @user.company_id == current_admin_user.company_id
+      flash[:alert] = "You're not the right admin"
+      redirect_to root_path
+    end
+
+    # @user = User.where(company_id: current_admin_user.company_id, id: params[:id]).first
+    # unless @user
+    #   flash[:alert] = "You're not the right admin"
+    #   redirect_to root_path
+    # end
+
+    # probably the nicest
+    # @user = User.find_by(company_id: current_admin_user.company_id, id: params[:id])
+    # unless @user
+    #   flash[:alert] = "You're not the right admin"
+    #   redirect_to root_path
+    # end
   end
 
   def new

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     root 'base#dashboard'
     resources :companies
     resources :users
-    #get '/companies/:id' => 'companies#show'
+    # get '/companies/:id' => 'companies#show'
     # get '/manage-companies' => 'companies#manage'
   end
 end

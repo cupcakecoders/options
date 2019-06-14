@@ -4,12 +4,13 @@ List all employees
 <li>exclude current user from list - controller</li>
 <li>add links to view, edit, delete</li>
 <li>add job title to users table</li>
+<li>exclude any rows with nil in company_id field<li>
 <li>paginate</li>
 </ul>
 
 <br>
 <div>
-<% @user.each do |user| %>
+<% @users.each do |user| %>
   <%= user.firstname %><%= user.lastname %><br/>
   <%= user.email %><br/>
 <% end %>
