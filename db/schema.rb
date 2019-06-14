@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_31_201644) do
+ActiveRecord::Schema.define(version: 2019_06_14_112654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,9 +44,10 @@ ActiveRecord::Schema.define(version: 2019_05_31_201644) do
     t.datetime "options_issued"
     t.datetime "vesting_start"
     t.datetime "vesting_end"
-    t.string "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_options_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -67,4 +68,5 @@ ActiveRecord::Schema.define(version: 2019_05_31_201644) do
 
   add_foreign_key "companies", "option_values"
   add_foreign_key "companies", "users"
+  add_foreign_key "options", "users"
 end

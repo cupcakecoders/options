@@ -2,8 +2,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   before_save { self.email = email.downcase }
-  has_many :option
-  accepts_nested_attributes_for :option
+  has_many :options
+  accepts_nested_attributes_for :options
   belongs_to :company, optional: true
 
 

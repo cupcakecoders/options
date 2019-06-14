@@ -27,11 +27,13 @@ class Admin::UsersController < Admin::BaseController
 
   def new
     @user = User.new
+    @user.options.new
   end
 
   def create
     @user = User.new(user_params)
     @user.company_id = current_admin_user.company_id
+    puts @user.errors
     if @user.save
       redirect_to [:admin, @user]
     else
@@ -45,6 +47,7 @@ class Admin::UsersController < Admin::BaseController
 
     def user_params
       params.require(:user).permit(:firstname, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, options_attributes: [:id,:number_of_options])
     end
+
 end
