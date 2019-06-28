@@ -15,4 +15,24 @@ class Admin::CompaniesController < Admin::BaseController
     @company = Company.find(params[:id])
   end
 
+ def create
+   Company.create(params[:company])
+ end
+
+  def update
+    @company = Company.find(params[:id])
+      if @company.update_attributes(company_params)
+      flash[:success] = "Company updated"
+      redirect_to [:admin, @company]
+      else
+      render 'edit'
+    end
+  end
+
+  private
+
+    def company_params
+      params.require(:company).permit(:company_name,:postcode)
+    end
+
 end

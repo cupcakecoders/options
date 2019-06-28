@@ -7,13 +7,7 @@
       <%= f.text_field :company_name %>
 
       <%= f.label :postcode %>
-      <%= f.email_field :postcode %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.text_field :postcode %>
 
       <%= f.submit "Update company", class: "btn btn-primary" %>
       <% end %>
