@@ -1,4 +1,5 @@
 class Admin::OptionValuesController < ApplicationController
+require 'date'
 
 def index
     @optionvalues = OptionValue.where(company_id: current_admin_user.company_id)
