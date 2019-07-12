@@ -33,7 +33,6 @@ class Admin::UsersController < Admin::BaseController
   def create
     @user = User.new(user_params)
     @user.company_id = current_admin_user.company_id
-    puts @user.errors
     if @user.save
       redirect_to [:admin, @user]
     else

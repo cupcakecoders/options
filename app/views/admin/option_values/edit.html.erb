@@ -1,0 +1,16 @@
+<h1> Edit Option Values Form </h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for ([:admin, @optionvalue]) do |f| %>
+
+      <%= f.label :options_price %>
+      <%= f.number_field :options_price %>
+
+      <%= f.label :date %>
+      <%= f.date_field :date %>
+
+      <%= f.submit "Edit options", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -25,6 +25,7 @@ class Admin::CompaniesController < Admin::BaseController
       flash[:success] = "Company updated"
       redirect_to [:admin, @company]
       else
+      flash[:alert] = "Company did not update"
       render 'edit'
     end
   end

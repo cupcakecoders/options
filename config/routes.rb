@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     root 'base#dashboard'
     resources :companies
     resources :users
+    resources :option_values
     # get '/companies/:id' => 'companies#show'
     # get '/manage-companies' => 'companies#manage'
   end

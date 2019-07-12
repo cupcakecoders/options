@@ -1,0 +1,7 @@
+<h1> option values index for </h1>
+<p><%= current_admin_user.company.company_name %></p>
+<div>
+<% @optionvalues.each do |optionvalue| %>
+  <%= optionvalue.options_price %><%= optionvalue.date %><br/>
+<% end %>
+</div>
