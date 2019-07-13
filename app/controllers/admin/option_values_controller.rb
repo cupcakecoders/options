@@ -33,14 +33,21 @@ end
 
 def update
     @optionvalue = OptionValue.find(params[:id])
-    #   if @optionvalue.update_attributes(optionvalue_params)
-    #   flash[:success] = "Options updated"
-    #   redirect_to [:admin, @optionvalue]
-    #   else
-    #   flash[:alert] = "Options did not update"
-    #   render 'edit'
-    # end
+      if @optionvalue.update_attributes(optionvalue_params)
+      flash[:success] = "Options updated"
+      redirect_to [:admin, @optionvalue]
+      else
+      flash[:alert] = "Options did not update"
+      render 'edit'
+    end
 end
+
+def destroy
+    OptionValue.find(params[:id]).destroy
+    flash[:success] = "Options price deleted"
+    redirect_to admin_option_values_path
+end
+
 
 
 private

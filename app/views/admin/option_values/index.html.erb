@@ -1,8 +1,21 @@
 <h1><%= current_admin_user.company.company_name %></h1>
 <h2> Options value list </h2>
-<div>
+<table>
+<thead>
+<tr>
+<th>Options Price</th>
+<th>Date Created</th>
+</tr>
+</thead>
+<tbody>
 <% @optionvalues.each do |optionvalue| %>
-  <%= optionvalue.options_price %><%= optionvalue.date.strftime ("%m/%d/%y") unless optionvalue.date.nil? %><br/>
+<tr>
+<td><%= optionvalue.options_price %></td>
+<td><%= optionvalue.date.strftime (" %e %B %Y") unless optionvalue.date.nil? %><br/></td>
+<td><%= link_to "Edit", edit_admin_option_value_path(optionvalue) %></td>
+<td><%= link_to "View", admin_option_value_path(optionvalue) %></td>
+<td><%= link_to "Delete", admin_option_value_path(optionvalue), :method => :delete, data: {confirm: 'Are you sure?'}%></td>
 <% end %>
-</div>
-
+</tr>
+</tbody>
+</table>
