@@ -1,4 +1,0 @@
-class OptionsCalculator
-    def
-    end
-    

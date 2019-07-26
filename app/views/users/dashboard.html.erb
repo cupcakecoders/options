@@ -1,1 +1,27 @@
 <h1> users dashboard </h1>
+
+<div class="container">
+    <div class="row">
+        <%= form_for :calculator, method: :post do |f| %>
+            <%= f.label :quantity %>
+            <%= f.number_field :quantity %>
+            <%= f.label :optionprice %>
+            <%= f.number_field :optionprice %>
+            <%= f.submit "Submit", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>
+
+<% unless @result.nil? %>
+    <div class="row">
+        <p><%= "Your options could be worth" %></p>
+        <p><%= @result %> </p>
+    </div>
+<% end %>
+
+
+
+#form has to take inputs as arguments so method is get, pass the params, then perform calculations, and post result to page.
+# prefill values in the form
+# nicer routes with resources
+# rename calculator to someting beter

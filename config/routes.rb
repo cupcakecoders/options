@@ -3,14 +3,16 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
   get '/faqs' => 'static_pages#faqs'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  #ßroot 'application#hello'
+  get '/dashboard' => 'users#dashboard'
+  post '/dashboard' => 'users#dashboard'
+  # post '/dashboard/calculator' => 'users#calculator'
+
+
   namespace :admin do
     root 'base#dashboard'
     resources :companies
     resources :users
     resources :option_values
-    # get '/companies/:id' => 'companies#show'
-    # get '/manage-companies' => 'companies#manage'
+    
   end
 end
