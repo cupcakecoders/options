@@ -1,10 +1,19 @@
 class UsersController < ApplicationController
+    before_action :authenticate_user!
+    before_action :verify_current_employee_user!
 
     def dashboard
         @result = get_calculation_if_post
     end
 
 private
+
+    def verify_current_employee_user!
+        unless current_employee_user
+        flash[:alert] = "Must be a current employee to proceed"
+        redirect_to root_path
+        end
+    end
 
     def calculator_params
         params.require(:calculator).permit(:quantity, :optionprice)

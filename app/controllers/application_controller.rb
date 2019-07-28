@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   include Pundit
 	protect_from_forgery with: :exception
 
+  private
+
   def current_admin_user
     if current_user && current_user.is_admin?
       current_user
