@@ -12,6 +12,5 @@ jane:
   firstname: Jane
   lastname: Furst
   email: jane@test.com
-  role: admin
+  role: 
   company: microsoft
-

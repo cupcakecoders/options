@@ -1,15 +1,74 @@
-<h1>admin companies edit</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for ([:admin, @company]) do |f| %>
-      <%= f.label :company_name %>
-      <%= f.text_field :company_name %>
-
-      <%= f.label :postcode %>
-      <%= f.text_field :postcode %>
-
-      <%= f.submit "Update company", class: "btn btn-primary" %>
+<h1>Company edit form</h1>
+<br/>
+<div class="container-fluid">
+  <%= form_for ([:admin, @company]) do |f| %>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm">
+          <%= f.label :company_name %>
+        </div>
+        <div class="col-sm">
+          <%= f.text_field :company_name %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm">
+          <%= f.label :address1 %>
+        </div>
+        <div class="col-sm">
+          <%= f.text_field :address1 %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm">
+          <%= f.label :address2 %>
+        </div>
+        <div class="col-sm">
+          <%= f.text_field :address2 %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm">
+          <%= f.label :town %>
+        </div>
+        <div class="col-sm">
+          <%= f.text_field :town %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm">
+          <%= f.label :country %>
+        </div>
+        <div class="col-sm">
+          <%= f.text_field :country %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm">
+          <%= f.label :postcode %>
+        </div>
+        <div class="col-sm">
+          <%= f.text_field :postcode %>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm">
+          <%= f.submit "Update company", class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
     <% end %>
   </div>
 </div>

@@ -1,9 +1,15 @@
-<h1>admin companies show</h1>
+<h1>Company details</h1>
+<br/>
+<p>Your current details are:</p>
+<br/>
 
-<p>show company details and share value details</p>
+<h4><%= @company.company_name %><h4>
+<h4><%= @company.address1 %></h4>
+<h4><%= @company.address2 %></h4>
+<h4><%= @company.town %></h4>
+<h4><%= @company.postcode %></h4>
+<h4><%= @company.country %></h4>
 
-<h1>
-  <%= @company.company_name %>
-</h1>
 
-<p><%= link_to "edit company details", edit_admin_company_path %></p>
+<%= link_to "edit company details", edit_admin_company_path, class: "btn btn-primary"%>
+

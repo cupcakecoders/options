@@ -33,7 +33,7 @@ class Admin::CompaniesController < Admin::BaseController
   private
 
     def company_params
-      params.require(:company).permit(:company_name,:postcode)
+      params.require(:company).permit(:company_name, :address1, :address2, :town, :country, :postcode)
     end
 
 end
