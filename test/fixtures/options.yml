@@ -2,7 +2,6 @@
 
 one:
   number_of_options: 1
-  cumulative_options: 1
   options_issued: 2019-05-24 15:34:15
   vesting_start: 2019-05-24 15:34:15
   vesting_end: 2019-05-24 15:34:15
@@ -10,7 +9,6 @@ one:
 
 two:
   number_of_options: 1
-  cumulative_options: 1
   options_issued: 2019-05-24 15:34:15
   vesting_start: 2019-05-24 15:34:15
   vesting_end: 2019-05-24 15:34:15

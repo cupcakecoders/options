@@ -9,6 +9,7 @@ class UsersController < ApplicationController
         @user_options_total = user.options.sum(:number_of_options)
         @company = user.company.company_name
         @firstname = user.firstname
+        @vesting = [1,2,3].vesting_date
     end
 
 private

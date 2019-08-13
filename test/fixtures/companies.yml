@@ -1,25 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  company_name: MyString
-  address1: MyString
-  string: MyString
-  address2: MyString
-  town: MyString
-  postcode: MyString
-  country: MyString
-  telephone_number: 1
-  user: one
-  optionvalue: one
+microsoft:
+  company_name: Microsoft
+  address1: 1 Microsoft Street
+  address2: California
+  town: Silicon Valley
+  postcode: 94566
+  country: US
+  telephone_number: 1415999999
 
-two:
-  company_name: MyString
-  address1: MyString
-  string: MyString
-  address2: MyString
-  town: MyString
-  postcode: MyString
-  country: MyString
-  telephone_number: 1
-  user: two
-  optionvalue: two
+
+
+
+    

@@ -19,7 +19,7 @@
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
               <% if current_admin_user %>
-                <li><%= link_to "Dashboard", '#' %></li>
+                <li><%= link_to "Dashboard", admin_root_path %></li>
                 <li><%= link_to "Options", admin_option_values_path %></li>
                 <li><%= link_to "Company", admin_company_path(current_user.company) %></li>
                 <li><%= link_to "New User", new_admin_user_path %></li>
