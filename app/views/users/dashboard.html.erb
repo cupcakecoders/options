@@ -1,5 +1,9 @@
-<h1> users dashboard </h1>
+<h1> Hi <%= @firstname %></h1>
 
+<h3>You have <%= @user_options_total %> options with a total value of <%=@options_value %> at <%= @company %> </h3>
+
+<h3>Want to know how much your shares could be worth? <br>Use our calculator to find out.</h3>
+<br>
 <div class="container">
     <div class="row">
         <%= form_for :calculator, method: :post do |f| %>
@@ -14,14 +18,10 @@
 
 <% unless @result.nil? %>
     <div class="row">
-        <p><%= "Your options could be worth" %></p>
         <p><%= @result %> </p>
     </div>
 <% end %>
 
 
-
-#form has to take inputs as arguments so method is get, pass the params, then perform calculations, and post result to page.
-# prefill values in the form
-# nicer routes with resources
-# rename calculator to someting beter
+ 
+ 

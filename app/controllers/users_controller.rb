@@ -4,6 +4,11 @@ class UsersController < ApplicationController
 
     def dashboard
         @result = get_calculation_if_post
+        user = current_employee_user
+        @options_value = user.company.option_values.last.options_price * user.options.sum(:number_of_options)
+        @user_options_total = user.options.sum(:number_of_options)
+        @company = user.company.company_name
+        @firstname = user.firstname
     end
 
 private
@@ -27,3 +32,5 @@ private
         ).futurevalue
     end
 end
+
+ 
