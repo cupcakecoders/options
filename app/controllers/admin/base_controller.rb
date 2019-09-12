@@ -9,9 +9,9 @@ class Admin::BaseController < ApplicationController
       end
   end
 
-  def pundit_user
-    current_admin_user
-  end
+  # def pundit_user
+  #   current_admin_user
+  # end
 
   def dashboard
   end

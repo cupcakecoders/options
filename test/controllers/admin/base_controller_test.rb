@@ -14,6 +14,7 @@ class Admin::BaseControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:jane)
     get admin_root_path
     assert_response :redirect
+    #assert_are_on_home_page_now  and got flash error message
   end
 
 end
