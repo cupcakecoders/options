@@ -9,7 +9,22 @@ class UsersController < ApplicationController
         @user_options_total = user.options.sum(:number_of_options)
         @company = user.company.company_name
         @firstname = user.firstname
-        @vesting = [1,2,3].vesting_date
+        @options_value_all = user.company.option_values.where('options_price > 0')
+        
+        # @dat = {]
+        # @options_value_all.each do |x|  
+        #     @dat[x[:date]] = x[:options_price]
+        # end
+       
+        @dat = @options_value_all.map do |x|
+            [x.date, x.options_price]
+        end
+
+
+        #return an array of arrays instead a hash
+
+        # user.company.option_values.select(:options_price).all
+        # user.company.option_values.where('options_price > 0')
     end
 
 private

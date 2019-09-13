@@ -1,8 +1,9 @@
+<%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
 <h1> Hi <%= @firstname %></h1>
 
 <h3>You have <%= @user_options_total %> options with a total value of <%=@options_value %> at <%= @company %> </h3>
 
-<h3>Want to know how much your shares could be worth? <br>Use our calculator to find out.</h3>
+<h3>Want to know how much your shares could be worth? Use our calculator to find out.</h3>
 <br>
 <div class="container">
     <div class="row">
@@ -22,3 +23,9 @@
     </div>
 <% end %>
 
+
+<h2> Options value history for <%=@company%> </h2>
+
+<%= @options_value_all.to_json %>
+
+<%= line_chart(@dat)%>
